@@ -35,7 +35,7 @@ node main.js <port>
 To start the client go into the "client" folder and run this command :
 
 ```sh
-node main.js <host> <port>
+node main.js <port> <host>
 ```
 
 
