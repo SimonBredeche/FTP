@@ -50,11 +50,16 @@ function downloadSocket(port,connectListener){
         const message = data.toString();
         const [status, ...args] = message.trim().split(" ")
         if(fileName != ""){
-            let dest = fs.createWriteStream(`output/${fileName}`);
-            dest.write(data);
-            fileName = "";
-            console.log("download finish closing socket ...")
-            dlsock.end();
+            let writer = fs.createWriteStream(`output/${fileName}`);
+            writer.write(data, () =>{
+                fileName = "";
+                console.log("download finish closing socket ...")
+                dlsock.end();
+            });
+            writer.on('finish', () => {
+                console.log("Closing download sockets")
+            });
+
         }
     })
     
