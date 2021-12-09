@@ -14,10 +14,10 @@ export function launch(port){
         serverModule.socketArray[socket.id] = "";
         socket.on("data", (data) => {
             //Receiving file
-            if(socket.fileName != undefined){
+            if(socket.fileName != null){
                 const dest = fs.createWriteStream(`sendedFiles/${path.basename(socket.fileName.toString())}`);
                 dest.write(data.toString("utf-8"));
-                socket.fileName = "";
+                socket.fileName = null;
             }
             else{
                 const message = data.toString();
