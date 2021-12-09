@@ -79,7 +79,7 @@ export function checkIfUserExist(username){
 }
 
 export function STOR(socket, args){
-    fileName = args.toString();
+    socket.fileName = args.toString();
     socket.write(`uploading file : ${args.toString()}`)
 }
 
