@@ -1,0 +1,14 @@
+{
+    "tata": {
+        "name" : "tata",
+        "password": "1234"
+    },
+    "titi": {
+        "name" : "titi",
+        "password": "1234"
+    },
+    "toto": {
+        "name" : "toto",
+        "password": "1234"
+    }
+}
